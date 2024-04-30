@@ -1,0 +1,41 @@
+.header {
+  background: rgba(241, 240, 240, 0.7);
+  width: 100%;
+  position: float;
+  border-radius: 80 px;
+  border-color: black;
+  -webkit-text-stroke-color: #111111;
+
+}
+
+nav {
+  float: left;
+}
+
+nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+  font-family:  fantasy;
+  font-size: 16px;
+}
+
+nav ul li a {
+  display: flexbox;
+  padding: 10px;
+  color: #111111;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  background: #969291;
+}
+.div{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
