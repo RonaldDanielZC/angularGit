@@ -25,9 +25,7 @@ export class TablaComponent implements OnInit {
 
   @Output() onInformacion: EventEmitter<any> = new EventEmitter<any>();
 
-  ngOnInit(): void {
-    console.log('Personas en el componente hijo', this.data);
-  }
+  ngOnInit(): void {}
 
   formatearNombreDeColumnas(columna: string): string {
     // Dividir el nombre por mayúsculas y unir con espacios

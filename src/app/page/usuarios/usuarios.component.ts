@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaInterface } from '../../core/interface/persona.interface';
 import { TablaComponent } from '../../components/tabla/tabla.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usuarios',
@@ -12,6 +13,7 @@ import { TablaComponent } from '../../components/tabla/tabla.component';
 export class UsuariosComponent implements OnInit {
   usuarios: PersonaInterface[] = [];
   columnas: string[] = [];
+  informacionUsuario: any;
 
   ngOnInit(): void {
     this.usuarios = [
@@ -58,5 +60,19 @@ export class UsuariosComponent implements OnInit {
     if (usuarios.length > 0) {
       this.columnas = Object.keys(usuarios[0]);
     }
+  }
+  recibirinfoUsuarios(usuario: PersonaInterface) {
+    this.informacionUsuario = usuario;
+    //aca va el modal
+    Swal.fire({
+      title: 'Producto',
+      icon: 'success',
+      html: `NOMBRE: ${usuario.nombre} <br>
+            FECHA NACIMIENTO: ${usuario.fechaNacimiento}<br>
+            TIPO DOCUMENTO: ${usuario.tipoDocumento}<br>
+            CELULAR: ${usuario.numeroCelular}<br>
+            TIPO DOCUMENTO: ${usuario.tipoDocumento}<br>
+            PESO: ${usuario.peso}<br> `,
+    });
   }
 }

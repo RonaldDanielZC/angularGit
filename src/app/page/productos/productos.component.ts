@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { TablaComponent } from '../../components/tabla/tabla.component';
 import { ProductoInterface } from '../../core/interface/producto.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-productos',
@@ -49,6 +50,14 @@ export class ProductosComponent implements OnInit {
 
   recibirInformacion(data: any) {
     this.informacion = data;
-    console.log('componente Padre', this.informacion);
+    //aca va el modal
+    Swal.fire({
+      title: 'Producto',
+      icon: 'info',
+      html: `NOMBRE: ${data.nombre} <br>
+              SKU: ${data.sku}<br>
+            CANTIDAD: ${data.cantidad}<br>
+            PRECIO: ${data.precio} `,
+    });
   }
 }
